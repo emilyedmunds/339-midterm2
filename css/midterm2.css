@@ -55,7 +55,15 @@ figcaption {
     }
 
     .container figure {
+        justify-items: center;
+        grid-auto-flow: column;
+    }
+
+    .container figure:nth-child(odd){
         grid-column: 1/span 1;
+    }
+    .container figure:nth-child(even){
+        grid-column:2/span 1;
     }
 
     .container figure:last-child {
