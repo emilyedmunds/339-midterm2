@@ -39,9 +39,52 @@ figcaption {
 
     .container figure:nth-child(odd){
         grid-column: 1 / span 2;
+        grid-auto-flow: row;
     }
 
     .container figure:nth-child(even){
         grid-column: 2 / span 2;
+        grid-auto-flow: row;
     }
+}
+
+@media screen and (min-width: 1000px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    .container figure {
+        grid-column: 1/span 1;
+    }
+
+    .container figure:last-child {
+        grid-column: 1/span 2;
+    }
+
+    .container figure::not(:last-child) {
+        grid-column: 1/span 1;
+        transform: skew(10deg, -10deg);
+        overflow: hidden;
+    }
+}
+
+@media screen and (prefers-reduced-motion: reduce){
+
+    h1{
+        text-align: center;
+        line-height:2em;
+        color:black;
+        border: 2px solid black;;
+        transition-property: color;
+        transition-duration: 3s;
+    }
+    
+    h1:hover{
+        background-color: white;
+        color: red;
+        border: 10px solid black;
+        border-radius: 55px;
+    }
+
 }
