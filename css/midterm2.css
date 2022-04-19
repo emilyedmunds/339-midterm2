@@ -2,6 +2,7 @@
     display: grid;
     width: 90%;
     justify-content: center;
+    justify-items: center;
     grid-template-columns: 100%;
 }
 
@@ -16,8 +17,10 @@ figcaption {
 
 @media screen and (min-width: 600px) {
 
-    a:focus {
+    a:focus, a:active {
         color: blue;
+        left: auto;
+        top: auto;
     }
 
     .container {
@@ -39,12 +42,12 @@ figcaption {
 
     .container figure:nth-child(odd){
         grid-column: 1 / span 2;
-        grid-auto-flow: row;
+        justify-items: start;
     }
 
     .container figure:nth-child(even){
         grid-column: 2 / span 2;
-        grid-auto-flow: row;
+        justify-items: end;
     }
 }
 
